@@ -1,0 +1,4 @@
+ubuntu_version_code: xenial
+openmodelica_version: 1.12.0
+openmodelica_build_edition: release
+openmodelica_gpg_key_url: http://build.openmodelica.org/apt/openmodelica.asc

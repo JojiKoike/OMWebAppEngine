@@ -1,0 +1,17 @@
+---
+- name: Configure Timezone
+  timezone:
+    name={{ timezone }}
+
+- name: Install Requirement APT Packages
+  apt:
+    name: '{{ item.name }}'
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - name: build-essential
+    - name: libncursesw5-dev
+    - name: libgdbm-dev
+    - name: libsqlite3-dev
+    - name: libbz2-dev

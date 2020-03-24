@@ -1,0 +1,11 @@
+modelica_ENC_Unit_Test
+draftLoss
+Radiative
+NaturanConvection_Top1
+NaturanConvection_Side
+NaturanConvection_Bottom1
+ModelicaUnit
+ModelicaEnc
+Enclosure
+ConductiveBox
+Buoyancy

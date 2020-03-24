@@ -1,0 +1,20 @@
+---
+- name: Add OpenModelica Apt Repository
+  template:
+    src: openmodelica.list.j2
+    dest: /etc/apt/sources.list.d/openmodelica.list
+    backup: yes
+
+- name: Add OpenModelica Apt Repository GPG Key
+  apt_key:
+    url: "{{ openmodelica_gpg_key_url }}"
+    state: present
+
+- name: Update APT Cache
+  apt:
+    update_cache: yes
+
+- name: Install OpenModelica
+  apt:
+    name: openmodelica
+    update_cache: yes

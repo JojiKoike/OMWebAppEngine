@@ -1,0 +1,50 @@
+---
+- name: Create uwsgi socket deploy directory
+  file:
+    path: /var/www/tmp/socket
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: 0777
+
+- name: Create uwsgi logfile directory
+  file:
+    path: /var/log/uwsgi
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: 0750
+
+- name: Create uwsgi vassals directory for uwsgi emperor mode
+  file:
+    path: /etc/uwsgi/vassals
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: 0750
+
+- name: Copy uwsgi.ini
+  copy:
+    src: uwsgi.ini
+    dest: /etc/uwsgi/vassals/uwsgi.ini
+
+- name: Copy emperor.ini
+  copy:
+    src: emperor.ini
+    dest: /etc/uwsgi/emperor.ini
+
+- name: Register uWSGI Service
+  copy:
+    src: uwsgi.service
+    dest: /etc/systemd/system/
+
+- name: Start uWSGI Service
+  service:
+    name: uwsgi
+    state: started
+    enabled: yes
+
+- name: Restart uWSGI Service
+  service:
+    name: uwsgi
+    state: restarted

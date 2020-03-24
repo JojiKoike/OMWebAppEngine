@@ -1,0 +1,9 @@
+---
+- hosts: devservers
+  become: yes
+  roles:
+    - common
+    - openmodelica
+    - pyenv
+    - uwsgi
+    - apache2

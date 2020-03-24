@@ -1,0 +1,17 @@
+[Unit]
+Description=uWSGI Emperor
+After=syslog.target
+
+[Service]
+ExecStart=/home/vagrant/.pyenv/shims/uwsgi --ini /etc/uwsgi/emperor.ini
+Restart=always
+KillSignal=SIGQUIT
+RuntimeDirectory=uwsgi
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+User=vagrant
+Group=vagrant
+
+[Install]
+WantedBy=multi-user.target

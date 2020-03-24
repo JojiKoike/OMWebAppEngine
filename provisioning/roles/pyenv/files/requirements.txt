@@ -1,0 +1,7 @@
+Flask==1.0.2
+Flask-RESTful==0.3.7
+Flask-Cors==3.0.7
+OMPython==3.1.2
+uWSGI==2.0.17
+pandas==0.23.4
+bpmappers==1.0.1
