@@ -14,7 +14,7 @@ jedi==0.13.2
 Jinja2==2.10
 MarkupSafe==1.1.0
 memory-profiler==0.55.0
-numpy==1.15.4
+numpy==1.22.0
 OMPython==3.1.2
 pandas==0.23.4
 parso==0.3.1
